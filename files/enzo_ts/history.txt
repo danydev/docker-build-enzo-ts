@@ -1,0 +1,76 @@
+# Version history for enzo_ts
+
+2020/05/06
+1.2.3
+- Data cache is now updated while running
+- Improved checks and responses for broken price data streams
+
+2020/04/27
+1.2.1
+- Added automatic BNB refill
+
+2020/04/26
+1.1.12
+- Stability improvements
+
+2020/04/24
+1.1.10
+- Reduced CPU/GPU consumption while displaying
+- Fixed potential issue with lack of order response from the exchange
+- Added Fee Management display
+
+2020/04/22
+1.1.9
+- Reduced traffic with signal network
+- Added latency display for connections
+
+2020/04/14
+1.1.8
+- TSL can now show/hide TSC windows
+- Various bug fixes
+
+2020/03/29
+1.1.5
+- Fixed issue with arguments in the launcher's DB
+
+2020/03/29
+1.1.4
+- Fixed real-time reporting of funds
+- Network communication fixes and improvements
+- Historical data fetch now uses a lock to prevent overloading Binance
+
+2020/03/17
+1.1.1
+- Fixed issues with windows placement
+- Fixed issue with calculation of profit from trades history
+- Fixed Issue with TSL not starting at Windows login
+
+2020/03/03
+1.1.0
+- Added launcher ENZO-TSL
+
+2020/02/16
+1.0.8
+- Improved network error reporting
+
+2020/02/12
+1.0.7
+- Added History display with performance stats
+
+2020/02/11
+1.0.6
+- Fixed issue with trades display.
+- Improved logging.
+
+2020/02/05
+1.0.5
+- Fixed network issues.
+
+2020/01/30
+1.0.2
+- Lowerd FPU requirements (no longer needs AVX)
+
+2020/01/28
+1.0.0
+- First version
+

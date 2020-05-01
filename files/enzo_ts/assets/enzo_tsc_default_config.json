@@ -1,0 +1,62 @@
+{
+    "exchange": "BINANCE",
+    "currencies": [
+        "BTC",
+        "USDT"
+    ],
+    "assets": [
+        {
+            "currency": "BTC",
+            "balance": 0.0,
+            "hold_qty": 0.0,
+            "min_hold_qty_coe": 0.0,
+            "spend_qty": 0.0,
+            "min_spend_qty": 0.0,
+            "max_spend_qty_coe": 1.0
+        },
+        {
+            "currency": "USDT",
+            "balance": 0.0,
+            "hold_qty": 5.0,
+            "min_hold_qty_coe": 0.0,
+            "spend_qty": 100.0,
+            "min_spend_qty": 0.0,
+            "max_spend_qty_coe": 1.0
+        }
+    ],
+    "margin_currency": "USDT",
+    "ref_base_currency": "BTC",
+    "ref_base_currency_disp_dec": 4,
+
+    "login_name"       : "",
+    "master_key"       : "",
+    "master_system_key": "",
+
+    "master_ip": "",
+    "master_port": 0,
+    "master_system_ip": "",
+    "master_system_port": 0,
+    "signal_mode": "sig_user",
+    "algo_logics": [
+        "flow"
+    ],
+    "algorithms": [
+        "home"
+    ],
+    "asset_alloc_type": "max",
+    "live_algos_n": 3,
+    "max_leverage": 1.0,
+    "history_days": 60,
+    "pause_trading_ui": true,
+    "autorefill_bnb_for_fees": true,
+    "no_trade_mode": false,
+    "close_pos_on_exit": false,
+    "trade_signal": [],
+    "trades_report": [],
+    "public_key": "",
+    "secret_key": "",
+    "public_key_file": "",
+    "secret_key_file": "",
+    "status_report_file": "",
+    "assets_report_file": "_var/enzo_tsc_assets_report.csv"
+}

@@ -1,0 +1,7 @@
+This agreement is a legal agreement between the person, company or organization ("You") that has licensed a software product and its supporting services ("Product") and NEWTYPE K.K. ("Licensor").
+
+The Product operates in a financial environment that involves a substantial degree of risk, potentially resulting in substantial financial losses, due to any number of events including, but not limited to: unforeseen market behavior, malfunction of software, malfunction of hardware, malfunction of network connectivity, by any or all of the parties involved.
+
+This Product should NOT be treated as a stable source of income or as a source of income at all. Please, manage your risk wisely.
+
+The Licensor is not a financial advisor and thus, not liable for the financial outcome of Your activity through the use of the Product. The Licensor does not provide legal, tax or accounting advice. You should refer to licensed legal, tax and accounting consultants in your jurisdiction in regard to those matters.
