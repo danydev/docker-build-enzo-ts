@@ -1,6 +1,10 @@
 # Version history for enzo_ts
 
 2020/05/13
+1.2.6
+- Fixed issue with parsing of arguments
+
+2020/05/13
 1.2.5
 - Enabled GUI keyboard navigation
 - Added --low_memory_mode (config and option)
