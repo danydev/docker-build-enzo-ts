@@ -1,5 +1,15 @@
 # Version history for enzo_ts
 
+2020/05/13
+1.2.5
+- Enabled GUI keyboard navigation
+- Added --low_memory_mode (config and option)
+
+2020/05/08
+1.2.4
+- Added timestamp to log entries
+- TSC log is now redirected to TSL when using --noui
+
 2020/05/06
 1.2.3
 - Data cache is now updated while running
