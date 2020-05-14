@@ -3,7 +3,7 @@
 Build an [**unofficial** docker image](https://hub.docker.com/repository/docker/dorru/enzo-ts) that will run [ENZO-TS](https://www.enzobot.com). Use at your own risk.
 
 ## Creating and releasing a new build
-- Download Linux build for [ENZO-TS](https://www.enzobot.com), decompress the file and put the folder in `files\enzo_ts`.
+- Download the [latest Linux build for ENZO-TS](https://www.enzobot.com/download/enzo-tsc_linux_latest), decompress the downloaded file in `files` directory (actually replacing the `enzo-ts` folder with the new one).
 - Run the following command (where `x.y.z` should match the downloaded version of ENZO-TS).
 ```shell script
 docker build . -t dorru/enzo-ts:x.y.z
