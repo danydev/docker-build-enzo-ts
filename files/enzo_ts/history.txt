@@ -1,5 +1,17 @@
 # Version history for enzo_ts
 
+2020/05/21
+1.2.11
+- TSL now force restart a process if the IPC connection is broken
+- Improved IPC system, now reporting less unnecessary errors
+- Added log errors and warnings for excessive discrepancy between
+  system clock and exchange server
+- Improved reporting of errors in the log
+
+2020/05/19
+1.2.10
+- Optimized --low_memory_mode / headless memory usage
+
 2020/05/15
 1.2.9
 - Fixed issue with Binance protocol orderId field being treated as 32 bit
