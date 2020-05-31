@@ -1,5 +1,13 @@
 # Version history for enzo_ts
 
+2020/05/25
+1.2.13
+- Added TSV viewer
+
+2020/05/24
+1.2.12
+- Added Expert Utilities panel
+
 2020/05/21
 1.2.11
 - TSL now force restart a process if the IPC connection is broken
