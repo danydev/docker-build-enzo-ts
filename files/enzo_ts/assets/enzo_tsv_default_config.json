@@ -45,7 +45,7 @@
     ],
     "asset_alloc_type": "max",
     "live_algos_n": 3,
-    "max_leverage": 1.0,
+    "leverage_coe": 1,
     "pause_trading_ui": true,
     "autorefill_bnb_for_fees": true,
     "no_trade_mode": false,

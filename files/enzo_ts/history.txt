@@ -1,5 +1,87 @@
 # Version history for enzo_ts
 
+2021/01/03
+1.6.3
+- Fixed issues with BNB refill for futures
+- Changed client order ID format to avoid potential issues with Binance
+- Perfomance graph now shows dates
+- Added Simulation panel to test for different scenarions on executed trades
+- Improved live reports
+- Rewrite of virtual fund manager
+- Added automatic balance .csv report by default
+- History of positions can now be exported to .csv
+- Fixed issue with leverage accidentally enabled for spot
+
+2020/11/13
+1.5.17
+- Fixed issue potentially leading to repeated orders
+
+2020/11/11
+1.5.16
+- Improved time synchronizaton with Binance server
+- Fixed crash issue on on account update after trade
+
+2020/11/11
+1.5.14
+- Fixed UI issue relative to manually expanding columns of data
+
+2020/11/10
+1.5.13
+- TSL now shows info of the running clients
+- Fixed minor issues showing spurious internal errors in the log
+- Fixed reporting of the open trade in the History panel
+
+2020/11/02
+1.5.11
+- TSL can now launch clients with no GUI
+- Fixed mouse cursor management in chart window
+- Fixed TSV trying to change the leverage setting
+
+2020/11/01
+1.5.10
+- Removed status bar from TSL
+
+2020/10/31
+1.5.9
+- Added a status bar
+- TSC/TSV log window is now hidden at start
+
+2020/10/30
+1.5.8
+- Linux version can now open user manual and links (when xdg-open is present)
+
+2020/10/29
+1.5.7
+- Fixed issue with Fee Management not acting on small amounts
+
+2020/10/29
+1.5.6
+- Client can now enter a trade long after the signal if risk allows
+- Signals panel now shows a list of individual trades
+- Added log messages related to trade signals and "mirror" algorithm
+- Improved BNB fee refill management
+- ENZO-TS server info is now cached locally as a fallback for downtime
+
+2020/10/23
+1.5.3
+- Windows' titles now display the profile names
+
+2020/10/22
+1.5.2
+- Fixed issue with display of list of trades
+- Improved connection to TS server
+
+2020/10/21
+1.5.1
+- TSL now allows to create multiple profiles
+- Added support for Binance Perpetual Futures trading
+- Added support for BNB/USDT and ETH/USDT pairs
+
+2020/10/15
+1.4.5
+- Fixed issue with large data cache files in Windows
+- Improved management of commission currency for orders
+
 2020/10/10
 1.4.3
 - Fixed critical issue with fetching ENZO-TS network address at client start
