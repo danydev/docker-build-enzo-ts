@@ -1,209 +1,312 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>1. ENZO TSC User Manual</title>
-        <style>
-</style>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        
-        
-        
-    </head>
-    <body class="vscode-light">
-        <h1 id="1-enzo-tsc-user-manual">1. ENZO TSC User Manual</h1>
-<!-- TOC -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="" />
+  <title>ENZO TSC User Manual</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: sans-serif;
+      font-size: 12pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style>
+  body {
+      max-width: 100%
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ENZO TSC User Manual</h1>
+<p class="author"></p>
+<p class="date">2021/1/22</p>
+</header>
+<nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#1-enzo-tsc-user-manual">1. ENZO TSC User Manual</a></li>
-<li><a href="#2-important-links">2. Important Links</a></li>
-<li><a href="#3-overview">3. Overview</a></li>
-<li><a href="#4-requirements">4. Requirements</a></li>
-<li><a href="#5-important-premise">5. Important Premise</a></li>
-<li><a href="#6-quick-start-8-steps">6. Quick Start 8 steps</a></li>
-<li><a href="#7-connecting-to-the-enzo-ts-network">7. Connecting to the ENZO-TS Network</a>
+<li><a href="#important-links"><span class="toc-section-number">1</span> Important Links</a></li>
+<li><a href="#overview"><span class="toc-section-number">2</span> Overview</a></li>
+<li><a href="#requirements"><span class="toc-section-number">3</span> Requirements</a></li>
+<li><a href="#important-premise"><span class="toc-section-number">4</span> Important Premise</a></li>
+<li><a href="#quick-start-8-steps"><span class="toc-section-number">5</span> Quick Start (8 steps)</a></li>
+<li><a href="#connecting-to-the-enzo-ts-network"><span class="toc-section-number">6</span> Connecting to the ENZO-TS Network</a>
 <ul>
-<li><a href="#71-sign-up-to-get-the-login-credentials">7.1. Sign-up to Get the Login Credentials</a></li>
-<li><a href="#72-store-your-permanent-login-key">7.2. Store your Permanent Login Key</a></li>
-<li><a href="#73-previewing-the-trading-signals">7.3. Previewing the Trading Signals</a></li>
-</ul>
-</li>
-<li><a href="#8-connecting-to-the-exchange">8. Connecting to the Exchange</a></li>
-<li><a href="#9-choosing-a-market">9. Choosing a Market</a>
+<li><a href="#sign-up-to-get-the-login-credentials"><span class="toc-section-number">6.1</span> Sign-up to Get the Login Credentials</a></li>
+<li><a href="#store-your-permanent-login-key"><span class="toc-section-number">6.2</span> Store your Permanent Login Key</a></li>
+<li><a href="#previewing-the-trading-signals"><span class="toc-section-number">6.3</span> Previewing the Trading Signals</a></li>
+</ul></li>
+<li><a href="#connecting-to-the-exchange"><span class="toc-section-number">7</span> Connecting to the Exchange</a></li>
+<li><a href="#choosing-a-market"><span class="toc-section-number">8</span> Choosing a Market</a>
 <ul>
-<li><a href="#91-trading-on-multiple-markets">9.1. Trading on Multiple Markets</a></li>
-</ul>
-</li>
-<li><a href="#10-preparing-the-funds-for-trading">10. Preparing the Funds for Trading</a>
+<li><a href="#trading-on-multiple-markets"><span class="toc-section-number">8.1</span> Trading on Multiple Markets</a></li>
+</ul></li>
+<li><a href="#preparing-the-funds-for-trading"><span class="toc-section-number">9</span> Preparing the Funds for Trading</a>
 <ul>
-<li><a href="#101-allocation-of-funds-across-multiple-markets">10.1. Allocation of Funds Across Multiple Markets</a></li>
-<li><a href="#102-the-importance-of-a-stable-investment">10.2. The Importance of a Stable Investment</a></li>
-<li><a href="#103-risk-level-and-stop-losses">10.3. Risk Level and Stop-losses</a></li>
-</ul>
-</li>
-<li><a href="#11-the-enzo-tsl-launcher-application">11. The ENZO-TSL Launcher Application</a></li>
-<li><a href="#12-the-enzo-tsv-viewer-application">12. The ENZO-TSV Viewer Application</a></li>
-<li><a href="#13-the-log-window">13. The Log Window</a></li>
-<li><a href="#14-api-keys-and-security">14. API Keys and Security</a></li>
-<li><a href="#15-extra-features">15. Extra Features</a>
+<li><a href="#allocation-of-funds-across-multiple-markets"><span class="toc-section-number">9.1</span> Allocation of Funds Across Multiple Markets</a></li>
+<li><a href="#the-importance-of-a-stable-investment"><span class="toc-section-number">9.2</span> The Importance of a Stable Investment <a name="importanceStableInvest"></a></a></li>
+<li><a href="#risk-level-and-stop-losses"><span class="toc-section-number">9.3</span> Risk Level and Stop-losses</a></li>
+</ul></li>
+<li><a href="#the-enzo-tsl-launcher-application"><span class="toc-section-number">10</span> The ENZO-TSL Launcher Application <a name="theTSLLauncherApp"></a></a></li>
+<li><a href="#the-enzo-tsv-viewer-application"><span class="toc-section-number">11</span> The ENZO-TSV Viewer Application</a></li>
+<li><a href="#the-log-window"><span class="toc-section-number">12</span> The Log Window</a></li>
+<li><a href="#api-keys-and-security"><span class="toc-section-number">13</span> API Keys and Security</a></li>
+<li><a href="#extra-features"><span class="toc-section-number">14</span> Extra Features</a>
 <ul>
-<li><a href="#151-market-watch">15.1. Market Watch</a></li>
-<li><a href="#152-high-frequency-display">15.2. High-Frequency Display</a></li>
-<li><a href="#153-volume-heat-map">15.3. Volume Heat-Map</a></li>
+<li><a href="#market-watch"><span class="toc-section-number">14.1</span> Market Watch</a></li>
+<li><a href="#high-frequency-display"><span class="toc-section-number">14.2</span> High-Frequency Display</a></li>
+<li><a href="#volume-heat-map"><span class="toc-section-number">14.3</span> Volume Heat-Map</a></li>
+</ul></li>
+<li><a href="#contacts"><span class="toc-section-number">15</span> Contacts</a></li>
 </ul>
-</li>
-<li><a href="#16-contacts">16. Contacts</a></li>
-</ul>
-<!-- /TOC -->
-<h1 id="2-important-links">2. Important Links</h1>
+</nav>
+<h1 data-number="1" id="important-links"><span class="header-section-number">1</span> Important Links</h1>
 <table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Client download page</td>
 <td><a href="https://www.enzobot.com/download">enzobot.com/download</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>ENZO-TS network sign-up</td>
 <td><a href="https://www.enzobot.com/signup">enzobot.com/signup</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Binance Spot account creation with referral</td>
 <td><a href="https://www.binance.com/en/register?ref=HO802SIU">binance.com/en/register?ref=HO802SIU</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Binance Futures account creation with referral</td>
 <td><a href="https://www.binance.com/en/futures/ref/39495921">binance.com/en/futures/ref/39495921</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Binance API keys management page</td>
 <td><a href="https://www.binance.com/en/usercenter/settings/api-management">binance.com/en/usercenter/settings/api-management</a></td>
 </tr>
 </tbody>
 </table>
-<h1 id="3-overview">3. Overview</h1>
-<img alt="ENZO-TSC Overview" src="tsc_manual_app_overview.png" width=977>
+<h1 data-number="2" id="overview"><span class="header-section-number">2</span> Overview</h1>
+<p><img alt="ENZO-TSC Overview" src="tsc_manual_app_overview.png" width=977></p>
 <p>ENZO-TSC is a Trading System Client for cryptocurrencies, part of the ENZO-TS suite. It is based on proprietary technology by NEWTYPE K.K., Japan.</p>
 <p>ENZO-TSC is a software that automatically executes trades on the your behalf utilizing our proprietary algorithmic models. We currently support BTC/USDT on the Binance exchange, with more options to come in the future.</p>
 <p>Signals are generated by our fully-automated trading system running on proprietary algorithms. See the ENZO-TSC web page for more details on the system and the strategies implemented.</p>
-<h1 id="4-requirements">4. Requirements</h1>
+<h1 data-number="3" id="requirements"><span class="header-section-number">3</span> Requirements</h1>
 <ul>
 <li>A PC with Windows or Linux (Mac support is in the works)</li>
-<li>A Binance Exchange account created with our referral: <a href="https://www.binance.com/en/register?ref=HO802SIU">link for Spot market</a>, <a href="https://www.binance.com/en/futures/ref/39495921">link for Futures market</a></li>
-<li>A desired amount of USDT to trade</li>
-<li>BNB set-up as the currency to pay for trading fees (see: <a href="https://support.binance.us/hc/en-us/articles/360035370272-Using-BNB-to-Pay-for-Fees">Using BNB to Pay for Fees</a>)</li>
+<li>A Binance Exchange account created with our referral:
+<ul>
+<li><a href="https://www.binance.com/en/register?ref=HO802SIU">Link for Spot market</a> (Referral ID: <code>HO802SIU</code>)</li>
+<li><a href="https://www.binance.com/en/futures/ref/39495921">Link for Futures market</a> (Referral ID: <code>39495921</code>)</li>
+</ul></li>
+<li>A desired amount of <a href="https://coinmarketcap.com/currencies/tether/">USDT</a> to trade (<a href="https://coinmarketcap.com/currencies/usd-coin/">USDC</a> and <a href="https://coinmarketcap.com/currencies/binance-usd/">BUSD</a> are also supported)</li>
+<li>BNB set-up as the currency to pay for trading fees (see: <a href="https://www.binance.com/en/support/faq/115000583311-Using-BNB-to-Pay-for-Fees">Using BNB to Pay for Fees</a>)</li>
 </ul>
-<h1 id="5-important-premise">5. Important Premise</h1>
-<ol>
+<h1 data-number="4" id="important-premise"><span class="header-section-number">4</span> Important Premise</h1>
+<ol type="1">
 <li>Only invest what you can lose.</li>
 <li>This system should not be considered as a way to earn a steady income.</li>
 </ol>
-<p>This software trades actual assets with actual monetary value. Cryptocurrencies are a high risk investment.
-The user is strongly advised to only invest in the amounts that he/she is willing to potentially lose.</p>
-<p>Our trading model is built and tested to give a statistical edge over the market in the <em>medium and long term</em>.
-Profit can fluctuate sensibly depending on the market's behavior. It's important to let the system run with a stable investment for months at the time, in order for the statistical edge to be realized.</p>
-<p>Apparent missed opportunities and streaks of losing trades may worry the user, but they are a natural part of the process.
-Winning and losing trades should not be over-analyzed. Some trades may seem clumsy from a human's point of view. It's important to understand that this is part of a model that is profit-focused and that is proven to be effective at the statistical level.</p>
-<h1 id="6-quick-start-8-steps">6. Quick Start (8 steps)</h1>
+<p>This software trades actual assets with actual monetary value. Cryptocurrencies are a high risk investment. The user is strongly advised to only invest in the amounts that he/she is willing to potentially lose.</p>
+<p>Our trading model is built and tested to give a statistical edge over the market in the <em>medium and long term</em>. Profit can fluctuate sensibly depending on the market’s behavior. It’s important to let the system run with a stable investment for months at the time, in order for the statistical edge to be realized.</p>
+<p>Apparent missed opportunities and streaks of losing trades may worry the user, but they are a natural part of the process. Winning and losing trades should not be over-analyzed. Some trades may seem clumsy from a human’s point of view. It’s important to understand that this is part of a model that is profit-focused and that is proven to be effective at the statistical level.</p>
+<h1 data-number="5" id="quick-start-8-steps"><span class="header-section-number">5</span> Quick Start (8 steps)</h1>
 <!-- ![Exchange Config Button](tsc_manual_status_no_login_no_keys.png) (below) -->
 <p>This is a bare minimum minimal guide to start trading. A more detailed guide will follow.</p>
-<ol>
-<li>
-<p>Launch the ENZO-TS installer and follow the instructions.<br>
-Check the <em><strong>Run After Login</strong></em> option (suggested) if you want the client to run automatically when you log back in the computer.</p>
-</li>
-<li>
-<p>Once the installation is complete, the ENZO-TSL launcher will start, which, in turn, will start the ENZO-TSC client.<br>
-Notice that, by default, a <em>ENZO-TSL</em> launch icon will be created on the Desktop.</p>
-</li>
-<li>
-<p>Once the data fetching is complete. The <strong>Status</strong> panel on the side of the window will present three buttons to configure the client.
-<img src="tsc_manual_status_no_login_no_keys.png" width=359></p>
-<ol>
-<li>
-<p>Click on <em><strong>Set-up Login Credentials...</strong></em> to configure the access to the <em>ENZO-TS Network</em>. This is the network that provides real-time trading signals generated by our system.<br>
-Once logged into the network, the client will start receiving signals. Including recent history of trades, useful to judge recent performance of the trading models.</p>
-</li>
-<li>
-<p>Click on <em><strong>New Binance Account...</strong></em> to create a new Binance account. A pop-up will appear. Click the button to create a <a href="https://www.binance.com/en/register?ref=HO802SIU">Spot account</a>. After that click the button to create a  <a href="https://www.binance.com/en/futures/ref/39495921">Futures account</a> (suggested but not necessary). Accounts from those buttons will use our referral links, as required for the <strong>free</strong> license.</p>
-</li>
-<li>
-<p>Click on <em><strong>Set-up API Keys...</strong></em> to set-up trading access to your Binance account. Without the API Keys, the client will be unable to execute trades on your behalf.</p>
-</li>
+<ol type="1">
+<li><p>Launch the ENZO-TS installer and follow the instructions. Check the <strong><em>Run After Login</em></strong> option (suggested) if you want the client to run automatically when you log back in the computer.</p></li>
+<li><p>Once the installation is complete, the ENZO-TSL launcher will start, which, in turn, will start the ENZO-TSC client. Notice that, by default, a <em>ENZO-TSL</em> launch icon will be created on the Desktop.</p></li>
+<li><p>Once the data fetching is complete. The <strong>Status</strong> panel on the side of the window will present three buttons to configure the client. <img src="tsc_manual_status_no_login_no_keys.png" width=359></p>
+<ol type="1">
+<li><p>Click on <strong><em>Set-up Login Credentials…</em></strong> to configure the access to the <em>ENZO-TS Network</em>. This is the network that provides real-time trading signals generated by our system.<br />
+Once logged into the network, the client will start receiving signals. Including recent history of trades, useful to judge recent performance of the trading models.</p></li>
+<li><p>Click on <strong><em>New Binance Account…</em></strong> to create a new Binance account. A pop-up will appear. Click the button to create a <a href="https://www.binance.com/en/register?ref=HO802SIU">Spot account</a>. After that click the button to create a <a href="https://www.binance.com/en/futures/ref/39495921">Futures account</a> (suggested but not necessary). Accounts from those buttons will use our referral links, as required for the <strong>free</strong> license.</p></li>
+<li><p>Click on <strong><em>Set-up API Keys…</em></strong> to set-up trading access to your Binance account. Without the API Keys, the client will be unable to execute trades on your behalf.</p></li>
+</ol></li>
+<li><p>Go to Binance and purchase an amount of USDT that you’d like to trade.</p></li>
+<li><p>Go to the Binance <a href="https://www.binance.com/en/usercenter/dashboard/overview">dashboard</a> and enable the option <strong><em>“Using BNB to pay for fees ( 25% discount )”</em></strong><br />
+Notice that the client will automatically purchase a small amount of BNB to be used for trading fees. You can disable this from the <strong><em>Fee Management</em></strong> section of the Status window.</p></li>
+<li><p>Go to <strong><em>File→Configuration…→Trade Management</em></strong> and select the amount of funds that you’d like to use.<br />
+Notice that by default the trade size is limited to 100 USDT, this is intentionally set to an initial low number out of caution.</p></li>
+<li><p>At the next start, the client will begin trading on the signals that it receives, with the amount specified.</p></li>
+<li><p>If the exchange’s status says <strong><em>Trading Paused</em></strong>, click on the checkbox to change it to <strong><em>Trading Active</em></strong>.<br />
+<img alt="Trading Paused" src="tsc_manual_wid_trading_paused.png" width=264> <img alt="Trading Active" src="tsc_manual_wid_trading_active.png" width=264></p></li>
 </ol>
-</li>
-<li>
-<p>Go to Binance and purchase an amount of USDT that you'd like to trade.</p>
-</li>
-<li>
-<p>Go to the Binance <a href="https://www.binance.com/en/usercenter/dashboard/overview">dashboard</a> and enable the option <em><strong>&quot;Using BNB to pay for fees ( 25% discount )&quot;</strong></em><br>
-Notice that the client will automatically purchase a small amount of BNB to be used for trading fees. You can disable this from the <em><strong>Fee Management</strong></em> section of the Status window.</p>
-</li>
-<li>
-<p>Go to <em><strong>File→Configuration...→Trade Management</strong></em> and select the amount of funds that you'd like to use.<br>
-Notice that by default the trade size is limited to 100 USDT, this is intentionally set to an initial low number out of caution.</p>
-</li>
-<li>
-<p>At the next start, the client will begin trading on the signals that it receives, with the amount specified.</p>
-</li>
-<li>
-<p>If the exchange's status says <em><strong>Trading Paused</strong></em>, click on the checkbox to change it to <em><strong>Trading Active</strong></em>. <br>
-<img alt="Trading Paused" src="tsc_manual_wid_trading_paused.png" width=264> <img alt="Trading Active" src="tsc_manual_wid_trading_active.png" width=264></p>
-</li>
-</ol>
-<p>You are now set for automatic trading. The client will do the rest. Just make sure that the connection is active. From time to time there may be some network errors coming from the exchange. In most cases the client is able to recover automatically, unless it's a scheduled/unscheduled downtime from the exchange itself.</p>
-<h1 id="7-connecting-to-the-enzo-ts-network">7. Connecting to the ENZO-TS Network</h1>
+<p>You are now set for automatic trading. The client will do the rest. Just make sure that the connection is active. From time to time there may be some network errors coming from the exchange. In most cases the client is able to recover automatically, unless it’s a scheduled/unscheduled downtime from the exchange itself.</p>
+<h1 data-number="6" id="connecting-to-the-enzo-ts-network"><span class="header-section-number">6</span> Connecting to the ENZO-TS Network</h1>
 <p>This is the network thought which the client obtains the trading signals.</p>
-<h2 id="71-sign-up-to-get-the-login-credentials">7.1. Sign-up to Get the Login Credentials</h2>
+<h2 data-number="6.1" id="sign-up-to-get-the-login-credentials"><span class="header-section-number">6.1</span> Sign-up to Get the Login Credentials</h2>
 <p>To connect to the network, you will first need to sign-up for the service at the <a href="https://www.enzobot.com/enzo_tsc_signup">ENZO-TSC Signup page</a>.</p>
-<p>After your request for access is accepted, a one-time <em><strong>temporary key</strong></em> will be sent to you (this key can only be used once).<br>
-Go to <em><strong>File→Configuration...→ENZO-TS Login</strong></em>  and insert login name &amp; key in their relative fields.</p>
+<p>After your request for access is accepted, a one-time <strong><em>temporary key</em></strong> will be sent to you (this key can only be used once).<br />
+Go to <strong><em>File→Configuration…→ENZO-TS Login</em></strong> and insert login name &amp; key in their relative fields.</p>
 <!-- ![](tsc_manual_config_sys_login.png)\ -->
-<p><img src="tsc_manual_config_sys_login.png" width=501><br>
-Click on <em><strong>Save and Restart</strong></em>.<br>
+<p><img src="tsc_manual_config_sys_login.png" width=501><br />
+Click on <strong><em>Save and Restart</em></strong>.<br />
 The client will quickly restart two times in a row, and finally connect to the <em>TS Network</em>.</p>
 <!-- ![Connected to TS Network](tsc_manual_config_sys_connected.png)\ -->
-<p><img src="tsc_manual_config_sys_connected.png" width=364><br>
+<p><img src="tsc_manual_config_sys_connected.png" width=364><br />
 <strong>Congratulations!</strong></p>
-<h2 id="72-store-your-permanent-login-key">7.2. Store your Permanent Login Key</h2>
-<p>On the first connection, the one-time <em><strong>temporary key</strong></em> is automatically replaced with a <em><strong>permanent key</strong></em>. This is your personal key, and it shouldn't be shared with anybody else. It is a good idea to store it in a safe place, such as a password manager.
-To do so, go back to <em><strong>File→Configuration...→ENZO-TS Login</strong></em>, and click on <em><strong>Copy to Clipboard</strong></em> to copy the key on the system clipboard.</p>
+<h2 data-number="6.2" id="store-your-permanent-login-key"><span class="header-section-number">6.2</span> Store your Permanent Login Key</h2>
+<p>On the first connection, the one-time <strong><em>temporary key</em></strong> is automatically replaced with a <strong><em>permanent key</em></strong>. This is your personal key, and it shouldn’t be shared with anybody else. It is a good idea to store it in a safe place, such as a password manager. To do so, go back to <strong><em>File→Configuration…→ENZO-TS Login</em></strong>, and click on <strong><em>Copy to Clipboard</em></strong> to copy the key on the system clipboard.</p>
 <p><img alt="Copy the permanent key"
      src="tsc_manual_config_copy_perm_key.png" width=514></p>
-<p>Notice how the text below the key's input field now reads <em>&quot;Valid key&quot;</em> instead of <em>&quot;Valid temporary key&quot;</em>.</p>
+<p>Notice how the text below the key’s input field now reads <em>“Valid key”</em> instead of <em>“Valid temporary key”</em>.</p>
 <blockquote>
 <p>NOTE: when creating a new client for a different market, simply copy &amp; paste the <em>Login Name</em> and <em>Login Key</em> from the Configuration panel of an existing client. Do not attempt to reuse the one-time <em>temporary key</em>.</p>
 </blockquote>
-<h2 id="73-previewing-the-trading-signals">7.3. Previewing the Trading Signals</h2>
+<h2 data-number="6.3" id="previewing-the-trading-signals"><span class="header-section-number">6.3</span> Previewing the Trading Signals</h2>
 <p>The trading signals come with a history of the activity of at least the last 30 days. This history allows to keep an eye on recent performance and display essential stats as well as individual trades.</p>
-<img alt="Trading Signals" src="tsc_manual_signals.png" width=1025>
-<p>To visualize the stats, select the <em><strong>Signals</strong></em> panel on the side of the application. This will show the recent performance (P&amp;L), largest win and loss, Equity Curve (fluctuations of profit), and a few other values.</p>
-<p>To visualize the individual trades, go to the head of the <em><strong>Chart</strong></em> window, next to <em><strong>Show Trades</strong></em>, uncheck <em><strong>Live</strong></em> and check <em><strong>Signal</strong></em>.</p>
+<p><img alt="Trading Signals" src="tsc_manual_signals.png" width=1025></p>
+<p>To visualize the stats, select the <strong><em>Signals</em></strong> panel on the side of the application. This will show the recent performance (P&amp;L), largest win and loss, Equity Curve (fluctuations of profit), and a few other values.</p>
+<p>To visualize the individual trades, go to the head of the <strong><em>Chart</em></strong> window, next to <strong><em>Show Trades</em></strong>, uncheck <strong><em>Live</em></strong> and check <strong><em>Signal</em></strong>.</p>
 <p>A series of colored crosses will mark the trades. Magenta crosses are Buy trades (acquire BTC), light-green crosses are Sell trades (return to USDT).</p>
-<h1 id="8-connecting-to-the-exchange">8. Connecting to the Exchange</h1>
+<h1 data-number="7" id="connecting-to-the-exchange"><span class="header-section-number">7</span> Connecting to the Exchange</h1>
 <p>In order to actually perform live trades, the client will need to communicate the orders to the exchange (Binance in this case) on your behalf. This is possible via a set of <em>API &amp; Secret</em> keys that are designed for this purpose.</p>
-<p>If you don't yet have a Binance account, please use our <a href="https://www.binance.com/en/register?ref=HO802SIU">Spot market referral link</a>
-and <a href="https://www.binance.com/en/futures/ref/39495921">Futures market referral link</a>. See below on the difference between those.</p>
-<p>If you don't yet have a set API keys, they can be easily created from the <a href="https://www.binance.com/en/usercenter/settings/api-management">API Management page</a> on Binance. When making a new set of keys, you'll be asked for a name, choose anything that you wish. You will also need to choose a set of restrictions to apply. We suggest the following:</p>
+<p>If you don’t yet have a Binance account, please use our <a href="https://www.binance.com/en/register?ref=HO802SIU">Spot market referral link</a> and <a href="https://www.binance.com/en/futures/ref/39495921">Futures market referral link</a>. See below on the difference between those.</p>
+<p>If you don’t yet have a set API keys, they can be easily created from the <a href="https://www.binance.com/en/usercenter/settings/api-management">API Management page</a> on Binance. When making a new set of keys, you’ll be asked for a name, choose anything that you wish. You will also need to choose a set of restrictions to apply. We suggest the following:</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Option</th>
 <th>Value</th>
 <th>Necessary</th>
@@ -211,19 +314,19 @@ and <a href="https://www.binance.com/en/futures/ref/39495921">Futures market ref
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>Enable Spot &amp; Margin Trading</code></td>
 <td>On</td>
 <td>Yes</td>
 <td>For regular trading</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>Enable Futures</code></td>
 <td>On</td>
 <td>No</td>
-<td>Create a Futures account first</td>
+<td>Must create a Futures account first</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>Enable Withdrawals</code></td>
 <td>Off</td>
 <td>No</td>
@@ -231,170 +334,152 @@ and <a href="https://www.binance.com/en/futures/ref/39495921">Futures market ref
 </tr>
 </tbody>
 </table>
-<img src="tsc_manual_api_restrictions.png" width=600>
-<br/>
-<br/>
-<p>Once obtained the Binance API keys, go to <em><strong>File→Configuration...→Exchange Server</strong></em> and insert the keys as required.</p>
+<p><img src="tsc_manual_api_restrictions.png" width=600></p>
+<blockquote>
+<p>IMPORTANT NOTICE: If you create a Futures account <strong>a new set of API Keys must be created</strong> in order to use those for futures trading. Although older API Keys created for Spot trading allow to choose <strong><em>Enable Futures</em></strong>, this is not enough. This is an interface issue with Binance and a common issue for the users.</p>
+</blockquote>
+<p>Once obtained the Binance API keys, go to <strong><em>File→Configuration…→Exchange Server</em></strong> and insert the keys as required.</p>
 <!--
 ![Exchange API keys filled](tsc_manual_config_api_keys_filled.png)
 -->
-<img src="tsc_manual_config_api_keys_filled.png" width=517>
-<p>Click on <em><strong>Save and Restart</strong></em>. If everything goes well, the client will now connect with your API keys, enabling it to trade on your behalf (see the section below on how to actually enable funds for trading).</p>
-<p>At this point the side <em><strong>Status</strong></em> panel should present some additional info coming from your account on the exchange server.</p>
+<p><img src="tsc_manual_config_api_keys_filled.png" width=517></p>
+<p>Click on <strong><em>Save and Restart</em></strong>. If everything goes well, the client will now connect with your API keys, enabling it to trade on your behalf (see the section below on how to actually enable funds for trading).</p>
+<p>At this point the side <strong><em>Status</em></strong> panel should present some additional info coming from your account on the exchange server.</p>
 <p><img alt="Exchange's Account Stats"
      src="tsc_manual_status_user_exchange_account_stats.png" width=359></p>
-<p>Under the <em><strong>Funds</strong></em> header:</p>
+<p>Under the <strong><em>Funds</em></strong> header:</p>
 <ul>
-<li><em><strong>Total Equity</strong></em> is the totality of your funds, valued in USDT for convenience.</li>
-<li><em><strong>Margin Used/Free</strong></em> is the amount of actual USDT that is used or that is free for trading.</li>
-<li><em><strong>Other Assets</strong></em> is the portion of your total equity that isn't BTC nor USDT.</li>
-<li><em><strong>Trading Assets</strong></em> is the actual quantity of the assets relative to this market (in this case BTC and USDT).</li>
+<li><strong><em>Total Equity</em></strong> is the totality of your funds, valued in USDT for convenience.</li>
+<li><strong><em>Margin Used/Free</em></strong> is the amount of actual USDT that is used or that is free for trading.</li>
+<li><strong><em>Other Assets</em></strong> is the portion of your total equity that isn’t BTC nor USDT.</li>
+<li><strong><em>Trading Assets</em></strong> is the actual quantity of the assets relative to this market (in this case BTC and USDT).</li>
 </ul>
-<p>Under the <em><strong>Fees Management</strong></em> header:</p>
+<p>Under the <strong><em>Fees Management</em></strong> header:</p>
 <ul>
-<li><em><strong>Status</strong></em> is the general status of the funds for the trading fees. This can be <strong>Good</strong>, <strong>Low</strong> or <strong>Insufficient</strong>.</li>
-<li><em><strong>Assets for Fees</strong></em> is the quantity of funds available to pay for trading fees.</li>
-<li><em><strong>Auto-Refill</strong></em> is an option to let the client automatically buy a small amount of BNB when necessary. This is enable dby default.</li>
+<li><strong><em>Status</em></strong> is the general status of the funds for the trading fees. This can be <strong>Good</strong>, <strong>Low</strong> or <strong>Insufficient</strong>.</li>
+<li><strong><em>Assets for Fees</em></strong> is the quantity of funds available to pay for trading fees.</li>
+<li><strong><em>Auto-Refill</em></strong> is an option to let the client automatically buy a small amount of BNB when necessary. This is enable dby default.</li>
 </ul>
-<h1 id="9-choosing-a-market">9. Choosing a Market</h1>
+<h1 data-number="8" id="choosing-a-market"><span class="header-section-number">8</span> Choosing a Market</h1>
 <p>Since version 1.5.x, ENZO-TS allows to trade on multiple crypto pairs as well as on Futures market type.</p>
-<p>Go to Menu <em><strong>File→Configuration...→Trade Management</strong></em>.</p>
-<img alt="" src="tsc_manual_config_select_pair.png" width=520>
-<p>Select one of the available market pairs between BTC/USDT, BNB/USDT, ETH/USDT.
-<br/>
-<br/></p>
-<img alt="" src="tsc_manual_config_select_market_type.png" width=520>
-<p>Select a market type between <em>Spot</em> and <em>Futures</em>. After having created the necessary Binance accounts.
-<br/>
-<br/></p>
-<h2 id="91-trading-on-multiple-markets">9.1. Trading on Multiple Markets</h2>
-<p>It's possible to operate on different markets at the same time.
-This is obtained by running multiple clients, each with their own settings.
-See the <a href="#11-the-enzo-tsl-launcher-application">&quot;The ENZO-TSL Launcher Application&quot;</a> section for instructions on how to add new clients.</p>
-<p><strong>NOTE:</strong> multiple clients should all run on different market pairs and market types combinations. For example, one client could run BTC/USDT Spot, another could run BTC/USDT Futures, but no two clients should run both on BTC/USDT Spot or both on BTC/USDT Futures, as this may generate confusion.
-On top of not having a practical value.</p>
-<h1 id="10-preparing-the-funds-for-trading">10. Preparing the Funds for Trading</h1>
-<p>In order for the client to execute trades, it's necessary to purchase a wanted amount of USDT.</p>
-<p>If you already have USDT on a Spot account and wish to trade on a Futures account, it's possible to directly transfer funds from your Spot wallet to your Futures wallet, without any transaction fee.
-To Transfer funds go to your <a href="https://www.binance.com/en/my/wallet/account/futures">Futures account page</a> on Binance and click on the <strong>Transfer</strong> button at the top right of the page.</p>
-<p>Although the generation of orders is fully automated. You are ultimately responsible for deciding the amount of funds that should be used. The <em><strong>Trade Management</strong></em> options allow to do this, and they are very crucial for the success of the investment.</p>
-<p>Go to Menu <em><strong>File→Configuration...→Trade Management</strong></em>.</p>
+<p>Go to Menu <strong><em>File→Configuration…→Trade Management</em></strong>.</p>
+<p><img alt="" src="tsc_manual_config_select_pair.png" width=520></p>
+<p>Select one of the available market pairs between BTC/USDT, BNB/USDT, ETH/USDT.<br />
+(<em>NOTE: BUSD and USDC are also available in place of USDT, for those users that require it</em>) <br/> <br/></p>
+<p><img alt="" src="tsc_manual_config_select_market_type.png" width=520></p>
+<p>Select a market type between <em>Spot</em> and <em>Futures</em>. After having created the necessary Binance accounts. <br/> <br/></p>
+<h2 data-number="8.1" id="trading-on-multiple-markets"><span class="header-section-number">8.1</span> Trading on Multiple Markets</h2>
+<p>It’s possible to operate on different markets at the same time. This is obtained by running multiple clients, each with their own settings. See the <a href="#theTSLLauncherApp">“The ENZO-TSL Launcher Application”</a> section for instructions on how to add new clients.</p>
+<p><strong>NOTE:</strong> multiple clients should all run on different market pairs and market types combinations. For example, one client could run BTC/USDT Spot, another could run BTC/USDT Futures, but no two clients should run both on BTC/USDT Spot or both on BTC/USDT Futures, as this may generate confusion. On top of not having a practical value.</p>
+<h1 data-number="9" id="preparing-the-funds-for-trading"><span class="header-section-number">9</span> Preparing the Funds for Trading</h1>
+<p>In order for the client to execute trades, it’s necessary to purchase a wanted amount of USDT.</p>
+<p>If you already have USDT on a Spot account and wish to trade on a Futures account, it’s possible to directly transfer funds from your Spot wallet to your Futures wallet, without any transaction fee. To Transfer funds go to your <a href="https://www.binance.com/en/my/wallet/account/futures">Futures account page</a> on Binance and click on the <strong>Transfer</strong> button at the top right of the page.</p>
+<p>Although the generation of orders is fully automated. You are ultimately responsible for deciding the amount of funds that should be used. The <strong><em>Trade Management</em></strong> options allow to do this, and they are very crucial for the success of the investment.</p>
+<p>Go to Menu <strong><em>File→Configuration…→Trade Management</em></strong>.</p>
 <!--
 ![Trade Management](tsc_manual_config_trade_management.png)
 -->
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Spot Management</th>
 <th>Futures Management</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><img src="tsc_manual_config_trade_management.png" width=520></td>
 <td><img src="tsc_manual_config_trade_management_fut.png" width=520></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><em><strong>Percentage of Total Equity</strong></em> allows to set the trade size as a percentage of the Total Equity of the account.
-If, for example, the account consists of <em>1,000 USDT</em> and <em>0 BTC</em>, then <em><strong>Total Equity</strong></em> is <em>1,000 USDT</em>. If then the user sets the <em><strong>Percentage of Total Equity</strong></em> to <em>60%</em>, then the trade size will be <em>600 USDT</em>.<br>
+<li><strong><em>Percentage of Total Equity</em></strong> allows to set the trade size as a percentage of the Total Equity of the account. If, for example, the account consists of <em>1,000 USDT</em> and <em>0 BTC</em>, then <strong><em>Total Equity</em></strong> is <em>1,000 USDT</em>. If then the user sets the <strong><em>Percentage of Total Equity</em></strong> to <em>60%</em>, then the trade size will be <em>600 USDT</em>.<br />
 NOTE: on Futures markets the term <em>Equity</em> becomes <em>Margin</em>.</li>
-<li><em><strong>Maximum Spending</strong></em> is a maximum spending cap. Under no circumstances the system will attempt to spend more <em>USDT</em> than it's established here. Out of caution, this value is initially set to <em>100 USDT</em>. Feel free to change it or remove it completely once you're confident to do so.</li>
-<li><em><strong>Minimum Spending</strong></em> allows to avoid taking trades if there isn't a certain minimum amount of free <em>USDT</em>. This is useful in cases where the user doesn't want to bother entering trades if there is a small amount of <em>USDT</em> available.</li>
-<li><em><strong>Hold Quantity</strong></em> is the amount of assets that the user wants to hold onto. A trade's size will always account for this.</li>
-<li><em><strong>Leverage</strong></em> (futures markets only) is the amount of leverage to be used for all trades on this market. Leverage multiples the effect of both profit and loss of each trade. This means that both possible return and risk are magnified. The admitted values here are between 1x and 5x.
+<li><strong><em>Maximum Spending</em></strong> is a maximum spending cap. Under no circumstances the system will attempt to spend more <em>USDT</em> than it’s established here. Out of caution, this value is initially set to <em>100 USDT</em>. Feel free to change it or remove it completely once you’re confident to do so.</li>
+<li><strong><em>Minimum Spending</em></strong> allows to avoid taking trades if there isn’t a certain minimum amount of free <em>USDT</em>. This is useful in cases where the user doesn’t want to bother entering trades if there is a small amount of <em>USDT</em> available.</li>
+<li><strong><em>Hold Quantity</em></strong> is the amount of assets that the user wants to hold onto. A trade’s size will always account for this.</li>
+<li><strong><em>Leverage</em></strong> (futures markets only) is the amount of leverage to be used for all trades on this market. Leverage multiples the effect of both profit and loss of each trade. This means that both possible return and risk are magnified. The admitted values here are between 1x and 5x.
 <ul>
 <li><strong>Leverage 1x</strong> has no effect. No added risk, nor profit.</li>
 <li><strong>Leverage 2x</strong> has relatively low risk, while allowing to double the profits.</li>
 <li><strong>Leverage 3x</strong> is an aggressive choice suitable for BTC. Use with caution with BNB and ETH, since those markets tend to be more volatile and bring more potential losses.</li>
-<li><strong>Leverage 4x and 5x</strong> are <em><strong>high-risk</strong></em> and should be used with <em><strong>extreme caution</strong></em>. Long-term usage may result in total loss of the assets. This is reserved for expert traders that are able to handle this level of risk.</li>
+<li><strong>Leverage 4x and 5x</strong> are <strong><em>high-risk</em></strong> and should be used with <strong><em>extreme caution</em></strong>. Long-term usage may result in total loss of the assets. This is reserved for expert traders that are able to handle this level of risk.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="101-allocation-of-funds-across-multiple-markets">10.1. Allocation of Funds Across Multiple Markets</h2>
-<p>When running multiple clients, it's essential to consider the allocation of funds to each client.</p>
-<p>The trading algorithms are statistically proofed for operating on an individual budget.
-Constant addition and subtraction of funds will create an imbalance that may lead to loss of profit.
-For a more detailed discussion on this, please see the <a href="#102-the-importance-of-a-stable-investment">&quot;The Importance of a Stable Investment&quot;</a> section below.</p>
-<p>With multiple clients operating on multiple markets, if each client tries, for example, to allocate 100% of the funds for a trade, only one of the clients will be able to trade during a give time frame.
-This <em>starvation</em> of activity may happen at an unfortunate time when a certain market would have performed better.</p>
-<p>One simple way to avoid starvation of funds for clients it's to allocate a proportional amount of funds for each client, utilizing the <strong>Percentage of Margin</strong> (or <strong>Percentage of Total Equity</strong>) parameter.</p>
-<p>For example one may decide to run three clients with the following configuration:</p>
-<ul>
-<li><code>BTC/USDT</code> client: 60% of margin</li>
-<li><code>BNB/USDT</code> client: 20% of margin</li>
-<li><code>ETH/USDT</code> client: 20% of margin</li>
-</ul>
-<p>In so doing, each client would continue to allocate always the same proportion of the funds for each trade.
-In short, this creates a condition of equity for all of the clients running on different markets.</p>
+<h2 data-number="9.1" id="allocation-of-funds-across-multiple-markets"><span class="header-section-number">9.1</span> Allocation of Funds Across Multiple Markets</h2>
+<p>When running multiple clients, it’s essential to consider the allocation of funds to each client.</p>
+<p>The trading algorithms are statistically proofed for operating on an individual budget. Constant addition and subtraction of funds will create an imbalance that may lead to loss of profit. For a more detailed discussion on this, please see the <a href="#importanceStableInvest">“The Importance of a Stable Investment”</a> section below.</p>
+<p>With multiple clients operating on multiple markets, if each client tries, for example, to allocate 100% of the funds for a trade, only one of the clients will be able to trade during a give time frame. This <em>starvation</em> of activity may happen at an unfortunate time when a certain market would have performed better.</p>
+<p>One simple way to avoid starvation of funds for clients it’s to allocate a proportional amount of funds for each client, utilizing the <strong>Percentage of Margin</strong> (or <strong>Percentage of Total Equity</strong>) parameter.</p>
+<p>For example one may decide to run three clients with the following configuration: - <code>BTC/USDT</code> client: 60% of margin - <code>BNB/USDT</code> client: 20% of margin - <code>ETH/USDT</code> client: 20% of margin</p>
+<p>In so doing, each client would continue to allocate always the same proportion of the funds for each trade. In short, this creates a condition of equity for all of the clients running on different markets.</p>
 <p>Notice that Spot and Futures account utilize separate wallets. So, there is no conflict of funds in regard to running a client on a Spot market and another client on a Futures market.</p>
-<h2 id="102-the-importance-of-a-stable-investment">10.2. The Importance of a Stable Investment</h2>
-<p>As a general rule, we suggest setting up the desired <em><strong>Percentage of Total Equity/Margin</strong></em>, to match the funds that you'd like to invest per-trade, and then refrain from modifying this value too often.</p>
+<h2 data-number="9.2" id="the-importance-of-a-stable-investment"><span class="header-section-number">9.2</span> The Importance of a Stable Investment <a name="importanceStableInvest"></a></h2>
+<p>As a general rule, we suggest setting up the desired <strong><em>Percentage of Total Equity/Margin</em></strong>, to match the funds that you’d like to invest per-trade, and then refrain from modifying this value too often.</p>
 <p>Continuously changing the size of the funds may adversely affect the final profit. Here is an example of how changing the trading size can worsen the performance:</p>
-<ol>
+<ol type="1">
 <li>The user starts with 1,000 USDT</li>
 <li>The system makes 4 good trades, netting a +5% total profit (total earned: +50 USDT)</li>
 <li>The user, feeling confident, decides to increase the funds from 1,050 to an even 2,000 USDT</li>
 <li>The 5th trade is a -2.5% loss on the 2,000 USDT, or -50 USDT (total earned: 0 USDT)</li>
 </ol>
-<p>This is a prime example of how changing the trade size at the &quot;wrong time&quot; can reset the profits.</p>
-<p>Of course, things could have gone the other way, but it's important to realize that any change to the funding scheme will affect the P&amp;L in the immediate and it will break the consistency of the investment, whose statistical edge requires a stable investment across several dozen trades to be realized.</p>
-<h2 id="103-risk-level-and-stop-losses">10.3. Risk Level and Stop-losses</h2>
-<p>Depending on the volatility of the market, our model risks from -2.5% to -3.5% of the capital afforded for each trade, with the potential to reach -4% per-trade in some rare cases.<br>
-When using leverage, this risk is multiplied. So, with stop-loss set at -3.5% and leverage set to 3x, the user is effectively risking -10.5% of the funds in a single trade!<br>
+<p>This is a prime example of how changing the trade size at the “wrong time” can reset the profits.</p>
+<p>Of course, things could have gone the other way, but it’s important to realize that any change to the funding scheme will affect the P&amp;L in the immediate and it will break the consistency of the investment, whose statistical edge requires a stable investment across several dozen trades to be realized.</p>
+<h2 data-number="9.3" id="risk-level-and-stop-losses"><span class="header-section-number">9.3</span> Risk Level and Stop-losses</h2>
+<p>Depending on the volatility of the market, our model risks from -2.5% to -3.5% of the capital afforded for each trade, with the potential to reach -4% per-trade in some rare cases.<br />
+When using leverage, this risk is multiplied. So, with stop-loss set at -3.5% and leverage set to 3x, the user is effectively risking -10.5% of the funds in a single trade!<br />
 For more details, see the <a href="https://www.enzobot.com/enzo_tsc">ENZO-TSC product page</a>.</p>
-<h1 id="11-the-enzo-tsl-launcher-application">11. The ENZO-TSL Launcher Application</h1>
+<h1 data-number="10" id="the-enzo-tsl-launcher-application"><span class="header-section-number">10</span> The ENZO-TSL Launcher Application <a name="theTSLLauncherApp"></a></h1>
 <p>The ENZO-TSL launcher is responsible for managing the ENZO-TSC application, which does the actual trading.</p>
-<img alt="ENZO-TSL Launcher" src="tsc_manual_tsl.png" width=586>
+<p><img alt="ENZO-TSL Launcher" src="tsc_manual_tsl.png" width=586></p>
 <p>The launcher has two main functions:</p>
-<ol>
+<ol type="1">
 <li>Centralize the execution of all of the TSC client application.</li>
 <li>Act as a watchdog, automatically restarting the TSC in case of a software malfunction.</li>
 </ol>
-<p>At the very left of each entry, a <em>context menu</em> button allows to <em><strong>Edit</strong></em>, <em><strong>View</strong></em>, <em><strong>Clone</strong></em> or <em><strong>Delete</strong></em> an entry.</p>
-<img alt="ENZO-TSL Launcher" src="tsc_manual_tsl_context_menu.png" width=229>
-<p>The <em><strong>Run</strong></em> power switch runs the relative TSC client instance. Notice that a general 10 seconds delay is applied when changing the state, this is in order to minimize errors from accidental clicks.</p>
-<p>The <em><strong>GUI</strong></em> checkbox determines whether or not the TSC client will be launched with a user interface. Running clients without a GUI requires less resources. This is a good option to save memory, especially when running several clients that don't require frequent reconfigurations.</p>
-<p>The <em><strong>Show</strong></em> checkbox is used to show/hide the client's window. This only applies to when the GUI is enabled. Notice that the client will continue to function correctly when the window is not visible. The benefit of hiding the client's window is to reduce clutter and minimize CPU and GPU usage.</p>
-<p>The <em><strong>Log</strong></em> and <em><strong>Process Log</strong></em>, respectively show the log of the launcher and the log of the selected process (the TSC client), as long as the entry in the TSL is selected with the mouse.</p>
-<p>After the install a <strong>&quot;Default&quot;</strong> profile for a client is visible. To launch the client, simply check the <strong>Run</strong> button.</p>
-<p>To add a new client for a different market, use the button <strong>Add New</strong> or <strong>Clone</strong> form the context menu. An edit window will appear to select a name for the profile. Then click <em><strong>Run</strong></em> to launch the new client and go to the <strong>Configuration Window</strong> to change the relevant market details.</p>
-<p>If you already have a running client, <em><strong>Clone</strong></em> is the faster way to create a new client. This option makes a copy of the selected client, saving the time required to configure again the login credentials for the ENZO-TS network and the exchange connection.</p>
-<p><strong>NOTE:</strong> multiple clients should all run on different market pairs and market types combinations. For example, one client could run BTC/USDT Spot, another could run BTC/USDT Futures, but no two clients should run both on BTC/USDT Spot or both on BTC/USDT Futures, as this may generate confusion.
-On top of not having a practical value.</p>
-<h1 id="12-the-enzo-tsv-viewer-application">12. The ENZO-TSV Viewer Application</h1>
+<p>At the very left of each entry, a <em>context menu</em> button allows to <strong><em>Edit</em></strong>, <strong><em>View</em></strong>, <strong><em>Clone</em></strong> or <strong><em>Delete</em></strong> an entry.</p>
+<p><img alt="ENZO-TSL Launcher" src="tsc_manual_tsl_context_menu.png" width=229></p>
+<p>The <strong><em>Run</em></strong> power switch runs the relative TSC client instance. Notice that a general 10 seconds delay is applied when changing the state, this is in order to minimize errors from accidental clicks.</p>
+<p>The <strong><em>GUI</em></strong> checkbox determines whether or not the TSC client will be launched with a user interface. Running clients without a GUI requires less resources. This is a good option to save memory, especially when running several clients that don’t require frequent reconfigurations.</p>
+<p>The <strong><em>Show</em></strong> checkbox is used to show/hide the client’s window. This only applies to when the GUI is enabled. Notice that the client will continue to function correctly when the window is not visible. The benefit of hiding the client’s window is to reduce clutter and minimize CPU and GPU usage.</p>
+<p>The <strong><em>Log</em></strong> and <strong><em>Process Log</em></strong>, respectively show the log of the launcher and the log of the selected process (the TSC client), as long as the entry in the TSL is selected with the mouse.</p>
+<p>After the install a <strong>“Default”</strong> profile for a client is visible. To launch the client, simply check the <strong>Run</strong> button.</p>
+<p>To add a new client for a different market, use the button <strong>Add New</strong> or <strong>Clone</strong> form the context menu. An edit window will appear to select a name for the profile. Then click <strong><em>Run</em></strong> to launch the new client and go to the <strong>Configuration Window</strong> to change the relevant market details.</p>
+<p>If you already have a running client, <strong><em>Clone</em></strong> is the faster way to create a new client. This option makes a copy of the selected client, saving the time required to configure again the login credentials for the ENZO-TS network and the exchange connection.</p>
+<p><strong>NOTE:</strong> multiple clients should all run on different market pairs and market types combinations. For example, one client could run BTC/USDT Spot, another could run BTC/USDT Futures, but no two clients should run both on BTC/USDT Spot or both on BTC/USDT Futures, as this may generate confusion. On top of not having a practical value.</p>
+<h1 data-number="11" id="the-enzo-tsv-viewer-application"><span class="header-section-number">11</span> The ENZO-TSV Viewer Application</h1>
 <p>The viewer (ENZO-TSV) is a version of the client that cannot perform trades. This is useful to monitor the situation from a different computer.</p>
 <p>For the TSV, a login to the ENZO-TS network is optional, and only needed to monitor the trade signals.</p>
 <p>A login to the Binance account is however necessary. For this purpose we suggest using a set of API keys that has <strong>trading disabled</strong>, other than disabling withdrawal, since they are both unnecessary for the viewer.</p>
-<h1 id="13-the-log-window">13. The Log Window</h1>
+<h1 data-number="12" id="the-log-window"><span class="header-section-number">12</span> The Log Window</h1>
 <p>The <strong>Log</strong> window shows raw text data mostly relative to the communication with the Exchange. Most of the data can be ignored, but it may be useful to look for the occasional red-colored (error) or orange-colored (warning) messages.</p>
-<h1 id="14-api-keys-and-security">14. API Keys and Security</h1>
-<p>API Keys can easily be generated from Binance's <a href="https://www.binance.com/en/usercenter/settings/api-management">API Management page</a>.</p>
-<p>In case of mistyping of a key, the exchange will respond with an uncorrelated error, since there's no mechanism to verify that a key is valid.</p>
-<p>This software can only trade on your behalf on the BTC/USDT market, however, when generating API Keys, it's suggested to <strong>not</strong> enable the withdrawal access.
-Withdrawal access is unnecessary and it may be a security risk, would the keys end up in the wrong hands.</p>
+<h1 data-number="13" id="api-keys-and-security"><span class="header-section-number">13</span> API Keys and Security</h1>
+<p>API Keys can easily be generated from Binance’s <a href="https://www.binance.com/en/usercenter/settings/api-management">API Management page</a>.</p>
+<p>In case of mistyping of a key, the exchange will respond with an uncorrelated error, since there’s no mechanism to verify that a key is valid.</p>
+<p>This software can only trade on your behalf on the BTC/USDT market, however, when generating API Keys, it’s suggested to <strong>not</strong> enable the withdrawal access. Withdrawal access is unnecessary and it may be a security risk, would the keys end up in the wrong hands.</p>
 <p>API Keys are only visible to the user. This software will never try to communicate them to our server or anywhere else.</p>
 <p>This software stores keys on a local configuration file. The Secret key will be encrypted. This is an added form of security, however the user should still refrain from sharing their own configuration file to others.</p>
-<h1 id="15-extra-features">15. Extra Features</h1>
-<h2 id="151-market-watch">15.1. Market Watch</h2>
+<h1 data-number="14" id="extra-features"><span class="header-section-number">14</span> Extra Features</h1>
+<h2 data-number="14.1" id="market-watch"><span class="header-section-number">14.1</span> Market Watch</h2>
 <p>This window gives are real-time view of the most active crypto pairs on Binance. The <strong>Change</strong> value allows to filter out markets where price has little or no movement. The <strong>Health</strong> value filters out those markets with poor liquidity. This is a very important metric, since markets with poor liquidity will often show sudden spikes in price only because of the relative lack of activity.</p>
-<p><img src="https://newtypekk.com/enzobot/enzo_tsc/enzo_tsc_market_watch.png" alt="Market Watch"></p>
+<figure>
+<img src="https://newtypekk.com/enzobot/enzo_tsc/enzo_tsc_market_watch.png" alt="Market Watch" /><figcaption aria-hidden="true">Market Watch</figcaption>
+</figure>
 <p><em>Above is a view of the Market Watch. Here the criteria selects only 10 markets out of 714 possible.</em></p>
 <p>As a reminder, the current version of ENZO-TSC only supports BTC/USDT signals. This feature is meant for advanced user that wants to keep an eye on other markets.</p>
-<h2 id="152-high-frequency-display">15.2. High-Frequency Display</h2>
-<p>A display of HFT activity is included as an option. This doesn't have an immediate practical use, but it might be a compelling visualization tool for some.</p>
-<p>To enable this visualization, click on <em><strong>Chart Display...</strong></em> at the top of the <em><strong>Chart</strong></em> window and select <em><strong>High-Frequency Data</strong></em> for the desired price display.</p>
-<img alt="High-Frequency trades" src="https://newtypekk.com/enzobot/enzo_tsc/20200122_enzo_tsc_hft_display.gif" width=600>
+<h2 data-number="14.2" id="high-frequency-display"><span class="header-section-number">14.2</span> High-Frequency Display</h2>
+<p>A display of HFT activity is included as an option. This doesn’t have an immediate practical use, but it might be a compelling visualization tool for some.</p>
+<p>To enable this visualization, click on <strong><em>Chart Display…</em></strong> at the top of the <strong><em>Chart</em></strong> window and select <strong><em>High-Frequency Data</em></strong> for the desired price display.</p>
+<p><img alt="High-Frequency trades" src="https://newtypekk.com/enzobot/enzo_tsc/20200122_enzo_tsc_hft_display.gif" width=600></p>
 <p><em>Above is a clip of HFT activity display in the client. 1-minute candles are shown as a reference.</em></p>
-<h2 id="153-volume-heat-map">15.3. Volume Heat-Map</h2>
+<h2 data-number="14.3" id="volume-heat-map"><span class="header-section-number">14.3</span> Volume Heat-Map</h2>
 <p>The <strong>Volume Heat-Map</strong> shows the distribution of volume in 2-dimensions. This visualization may be useful to determine the hot-spots that define price levels.</p>
-<p>To enable this visualization, click on <em><strong>Chart Display...</strong></em> at the top of the <em><strong>Chart</strong></em> window and select <em><strong>Volume Heat-Map</strong></em> for the desired price display.</p>
-<p>This is also of no immediate practical use, and it's only exposed for the advanced user that may be doing their own research.</p>
-<img alt="Volume heat-map" src="https://newtypekk.com/enzobot/enzo_tsc/enzo_tsc_volhmap.png" width=600>
-<h1 id="16-contacts">16. Contacts</h1>
-<p>You can reach us via the dedicated on-line <a href="https://www.enzobot.com/contact_us">contact form</a>, or via email us at <a href="mailto:info@enzobot.com">info@enzobot.com</a> .</p>
+<p>To enable this visualization, click on <strong><em>Chart Display…</em></strong> at the top of the <strong><em>Chart</em></strong> window and select <strong><em>Volume Heat-Map</em></strong> for the desired price display.</p>
+<p>This is also of no immediate practical use, and it’s only exposed for the advanced user that may be doing their own research.</p>
+<p><img alt="Volume heat-map" src="https://newtypekk.com/enzobot/enzo_tsc/enzo_tsc_volhmap.png" width=600></p>
+<h1 data-number="15" id="contacts"><span class="header-section-number">15</span> Contacts</h1>
+<p>You can reach us via the dedicated on-line <a href="https://www.enzobot.com/contact_us">contact form</a>, or via email us at info@enzobot.com .</p>
 <p>We are also available for corporate consulting.</p>
-
-    </body>
-    </html>
+</body>
+</html>
