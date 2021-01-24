@@ -1,13 +1,14 @@
 # Version history for enzo_ts
 
 2021/01/
-1.6.8
+1.6.9
 - Fixed crash issue with Perfomance panel
 - Improved reports in Performance and Simulation panels
 - Console now using fixed font
 - Added custom content scale in display options
 - Added support for /USDC and /BUSD markets
 - Better support for light color scheme
+- Logic to handle broken Binance order response
 
 2021/01/06
 1.6.6
