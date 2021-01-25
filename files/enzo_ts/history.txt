@@ -1,8 +1,9 @@
 # Version history for enzo_ts
 
-2021/01/
-1.6.9
+2021/01/25
+1.6.10
 - Fixed crash issue with Perfomance panel
+- Fixed issue due to removal of minNotional from Binance Futures API
 - Improved reports in Performance and Simulation panels
 - Console now using fixed font
 - Added custom content scale in display options
