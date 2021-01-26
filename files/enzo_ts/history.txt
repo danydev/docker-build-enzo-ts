@@ -1,5 +1,12 @@
 # Version history for enzo_ts
 
+2021/01/
+1.6.12
+- Improved handling of broken orders flow
+- Added check to avoid double spending with futures
+- Added dislay of Binance native position
+- Expert Utilities now allows to Buy and Close futures positions manually
+
 2021/01/25
 1.6.10
 - Fixed crash issue with Perfomance panel
