@@ -1,6 +1,10 @@
 # Version history for enzo_ts
 
-2021/02/
+2021/02/13
+1.7.7
+- Improved handling of user data stream
+
+2021/02/12
 1.7.6
 - Improvements on futures orders
 - Binance trades are now saved locally in the persist_data dir
