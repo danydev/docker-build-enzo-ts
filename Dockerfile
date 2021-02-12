@@ -1,4 +1,4 @@
-FROM debian:10.3
+FROM debian:10.7
 
 RUN apt-get update && apt-get install -y \
         ca-certificates \
