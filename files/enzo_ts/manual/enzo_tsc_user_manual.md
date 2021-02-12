@@ -1,6 +1,6 @@
 % ENZO TSC User Manual
 %
-% 2021/1/22
+% 2021/1/30
 
 ---
 fontsize:        12pt
@@ -355,6 +355,8 @@ This window gives are real-time view of the most active crypto pairs on Binance.
 
 As a reminder, the current version of ENZO-TSC only supports BTC/USDT signals. This feature is meant for advanced user that wants to keep an eye on other markets.
 
+<!--
+
 ### High-Frequency Display
 
 A display of HFT activity is included as an option. This doesn't have an immediate practical use, but it might be a compelling visualization tool for some.
@@ -374,6 +376,8 @@ To enable this visualization, click on ***Chart Display...*** at the top of the 
 This is also of no immediate practical use, and it's only exposed for the advanced user that may be doing their own research.
 
 <img alt="Volume heat-map" src="https://newtypekk.com/enzobot/enzo_tsc/enzo_tsc_volhmap.png" width=600>
+
+-->
 
 ## Contacts
 

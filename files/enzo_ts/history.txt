@@ -1,11 +1,35 @@
 # Version history for enzo_ts
 
-2021/01/
+2021/02/
+1.7.6
+- Improvements on futures orders
+- Binance trades are now saved locally in the persist_data dir
+- TSC no longer relies on Binance's DB of order/trades after a new trade
+- Fixed refresh issue with performance panel
+
+2021/01/31
+1.7.3
+- Better order size estimation for futures
+- Binance orders are now saved locally
+
+2021/01/30
+1.7.1
+- Better handling of Binance's futures orders
+- Improved history display
+- No longer loading history of HF data (faster start)
+- Added ability to Buy and Close a futures position in Expert Utilities
+
+2021/01/27
+1.6.15
+- More fixes for futures trades management and display
+
+2021/01/27
 1.6.13
 - Improved handling of broken orders flow
 - Added check to avoid double spending with futures
 - Added dislay of Binance native position
 - Expert Utilities now allows to Buy and Close futures positions manually
+- Increased latency in fetching HF data, to avoid Binance's rate limit
 
 2021/01/25
 1.6.10
