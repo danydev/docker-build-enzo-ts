@@ -10,4 +10,4 @@ COPY files/enzo_ts/ /enzo_ts/
 
 WORKDIR /enzo_ts
 
-ENTRYPOINT ["/enzo_ts/bin/enzo_tsl", "--noui", "--low_memory_mode"]
+ENTRYPOINT ["/enzo_ts/run_headless.sh"]
