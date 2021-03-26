@@ -1,9 +1,56 @@
 # Version history for enzo_ts
 
-2021/02/14
-1.7.8
+2021/03/26
+1.8.4
+- TSL now allows to setup some basic TSC configs
+- Added automatic groups for API keys and market type to TSL
+- Fixed calculation of Sharpe ratio in stats
+- Display improvements
+- Moved User Manual to on-line PDF
+
+2021/03/05
+1.8.3
+- Improved chart display of prices and P&L
+- Better command line --help
+- Added section about creating a Binance account to the user manual
+
+2021/03/04
+1.8.2
+- Simulation and Signals can now specify a fund quantity and trade size
+- Performance reporting tables can now show Quantity and NAV
+- Improved chart display of prices and P&L
+- Increased restart delay in case of Binance's maintenance error code
+
+2021/02/26
+1.8.1
+- Added *experimental* ADA and XRP markets
+- Fixed display Cumulative P&L in monthly reports
+- Updated used manual
+
+2021/02/25
+1.8.0
+- Signals panel showing more history, details and sim parameters
+- Improved Diagnostics display for web sockets
+- Improved calculation of free margin for futures
+- All Futures native positions are now displayed
+- Workaround for unreliable candle data when Binance is under stress
+
+2021/02/19
+1.7.11
+- Improved futures' position management (now using positionRisk endpoint)
+
+2021/02/19
+1.7.10
+- Fixed estimation of futures position size at launch
+- Fixed copy of log to clipboard
+- Fixed issue with funding rate est. not applied to performance reporting
+- Fixed reporting of positions for EAPI/HTML output
+
+2021/02/17
+1.7.9
 - Improved handling of user data stream
 - Linux x64 now using latest libcpprest
+- Added estimated funding rate to performance panel and simulation
 
 2021/02/12
 1.7.6
