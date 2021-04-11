@@ -1,5 +1,12 @@
 # Version history for enzo_ts
 
+2021/04/
+1.9.0
+- Added automatic fund allocation on multiple markets
+- Major rework of the TSL, now with groups
+- Improved time synch with Binance
+- General UI improvements
+
 2021/03/26
 1.8.4
 - TSL now allows to setup some basic TSC configs
