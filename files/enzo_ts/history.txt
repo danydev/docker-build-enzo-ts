@@ -1,6 +1,21 @@
 # Version history for enzo_ts
 
 2021/04/
+1.9.7
+- Added live report for groups
+- Added history stats in groups' UI
+
+2021/04/14
+1.9.5
+- Groups' buttons now open a pop-up menu
+- Improved latency detection with Binance
+
+2021/04/13
+1.9.2
+- "Add New" in TSL now auto-fills login and API keys when available
+- Fixed live reporting not showing stats and trades
+
+2021/04/12
 1.9.1
 - Disabled high-frequency data to reduce bandwidth (can be enabled from config)
 - Improved TSL groups, now collapsible
