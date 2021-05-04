@@ -1,6 +1,34 @@
 # Version history for enzo_ts
 
-2021/04/
+2021/05/02
+2.0.2
+- Live reports now support a start date
+- Added a thousands digit separator to live reports
+- New TSC configs no longer have a default 100 USDT limit
+
+2021/05/01
+2.0.1
+- Fixed automatic creation of TSC with new markets after upgrade
+
+2021/04/30
+2.0.0
+- Fixed default TSL config, previously creating all-BTC markets
+- Added automatic markets addition on first upgrade
+- Added grace period of 5 seconds before starting to trade
+- Fixed handling of change form temporary to permanent key with multiple TSCs
+- Fixed issue with pause mode reported in no-UI mode
+- Various UI fixes
+- Updated user manual and Binance setup guide
+- Config dialogs now link to Binance setup guide
+- Removed obsolete TSV
+
+2021/04/26
+1.9.8
+- Added selection of process/group in TSL's history display windows
+- Fixed saving of Display Config
+- Fixed calculation of magin when a short position is open
+
+2021/04/23
 1.9.7
 - Added live report for groups
 - Added history stats in groups' UI
