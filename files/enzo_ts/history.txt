@@ -1,5 +1,23 @@
 # Version history for enzo_ts
 
+2021/05/14
+2.0.4
+- Open positions in live reports now show leverage and market sizing
+- Added option to disable trading in a TSL group (useful as a viewer)
+- Improved funding fees estimation in profit calculation (heavier funding rate)
+- Fixed issue with signal execution logic not operating when starving for candle data
+- "Close Position" in Expert Utilities now works with short positions as well
+- Binance Futures orders now use the "reduceOnly" flag, for safety against double-sell
+- Improved diagnostics panel
+
+2021/05/05
+2.0.3
+- Enabling of stop-loss no longer gives a warning
+- Fixed P&L in monthly breakdown in Group History
+- Improved auto-fill of fields when adding a new client via the TSL
+- Process edit UI now changes the title to refect the base currency
+- Unhandled exceptions in TSL should now generate a log entry
+
 2021/05/02
 2.0.2
 - Live reports now support a start date
