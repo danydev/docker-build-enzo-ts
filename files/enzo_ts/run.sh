@@ -1,13 +1,9 @@
 #!/bin/bash
 
-lib_path="bin/deps_base"
+BASHSCRIPTDIR=$(cd "$(dirname "$0")"; pwd)
 
-# NOTE: include the necessary additional dependencies
-if [ "`dirname \"$(whereis libGLU.so)\"`" == "." ];then
-    lib_path+=":bin/deps_gfx"
-fi
-if [ "`dirname \"$(whereis libssl.so)\"`" == "." ];then
-    lib_path+=":bin/deps_ssl"
-fi
+ENZO_LIBRARY_PATH="${BASHSCRIPTDIR}/bin:${BASHSCRIPTDIR}/bin/deps_base:${BASHSCRIPTDIR}/bin/deps_gfx:${BASHSCRIPTDIR}/bin/deps_ssl"
 
-LD_LIBRARY_PATH="${lib_path}" bin/enzo_tsl
+export LD_LIBRARY_PATH="${ENZO_LIBRARY_PATH}:${LD_LIBRARY_PATH}"
+
+bin/enzo_tsl

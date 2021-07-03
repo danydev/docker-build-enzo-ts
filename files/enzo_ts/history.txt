@@ -1,5 +1,30 @@
 # Version history for enzo_ts
 
+2021/06/25
+2.1.1
+- Added support for pure headless
+
+2021/06/23
+2.1.0
+- Improved automatic position sizing. Removed options "mild" and "aggressive"
+- Fixed crash bug in the TSL when doing "Add New" followed by "Discard"
+- Fixed issue with purchase of quantities too small to sell with Futures
+- Better calculation of alpha in performance stats
+- Volume heat-map now dislays without HF data
+
+2021/06/07
+2.0.6
+- Fixed issue with multiple TSCs overpurchasing BNBs for fees
+
+2021/06/05
+2.0.5
+- Added "mild" and "aggressive" automatic position sizing mode
+- Improved management of ENZO-TS servers
+- TSL config now contains all data of TSCs' configs. No need to export TSCs' configs
+- Fixed potential resource leak on Linux
+- Fixed TSL/TSC issue with a large number of TSCs
+- Improved live reporting display on moobile devices
+
 2021/05/14
 2.0.4
 - Open positions in live reports now show leverage and market sizing
