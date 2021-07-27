@@ -1,5 +1,20 @@
 # Version history for enzo_ts
 
+2021/07/26
+3.0.1
+- Fixes for the fee manager
+- Reduced data streming latency of candles
+
+2021/07/22
+3.0.0
+- Moved to curl and libwebsockets for connectivity
+- Fixed issues with editing of TSL groups
+- Various optimizations
+
+2021/06/26
+2.1.2
+- Fixed crash bug when deleting a process from the TSL
+
 2021/06/25
 2.1.1
 - Added support for pure headless
