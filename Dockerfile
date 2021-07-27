@@ -2,9 +2,8 @@ FROM debian:10.7
 
 RUN apt-get update && apt-get install -y \
         ca-certificates \
-        libcpprest-dev \
         libglu1 \
-        libbrotli1 \
+	librtmp1 \
         libnghttp2-14
 
 COPY files/enzo_ts/ /enzo_ts/
