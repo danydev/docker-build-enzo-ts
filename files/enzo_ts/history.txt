@@ -1,9 +1,20 @@
 # Version history for enzo_ts
 
+2021/08/07
+3.0.5
+- Fixed groups edit UI
+
+2021/08/06
+3.0.4
+- Fees manager now uses existing BNB and USDT on Spot wallets for Futures (default setting)
+- Expert Utilities panel now allows to move assets between Spot and Futures wallets
+- Market data streams are now managed by the TSL (reduces bandwidth usage with multiple TSCs on same markets)
+- Added missing OpenGL dependencies for Linux builds
+
 2021/07/26
 3.0.1
 - Fixes for the fee manager
-- Reduced data streming latency of candles
+- Reduced data streaming latency of candles
 
 2021/07/22
 3.0.0
