@@ -1,5 +1,17 @@
 # Version history for enzo_ts
 
+2021/08/11
+3.0.8
+- Reduced latency requirements to keep a connection with the ENZO-TS network
+
+2021/08/10
+3.0.7
+- Fixed potential TSL crash on a broken internet connection
+
+2021/08/08
+3.0.6
+- Fixed calculation of performance reports
+
 2021/08/07
 3.0.5
 - Fixed groups edit UI
